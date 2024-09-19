@@ -85,7 +85,7 @@
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  color: #00796b;
+  color: #002D72;
   border: 2px solid #fff;
   font-weight: 600;
   font-size: 15px;
@@ -140,7 +140,7 @@ body {
 } */
 
 a {
-  color: #004d40;
+  color: #191970;
 }
 
 /* main blockqoute */
@@ -320,7 +320,7 @@ h3 {
 } */
 
 #intro.section {
-  background: #a7ffeb repeat;
+  background: #87CEFA repeat;
   position: relative;
 }
 
@@ -552,6 +552,11 @@ small {
   color: #008073 !important;
 }
 
+.blue-text
+{
+  color: #4B9CD3 !important;
+}
+
 /* .teal-text {
   color: #0b5e86 !important;
 } */
@@ -560,6 +565,10 @@ small {
 
 .teal {
   background-color: #008073 !important;
+}
+
+.blue {
+  background-color: #002D72 !important;
 }
 
 /* .teal {
@@ -602,7 +611,7 @@ small {
     position: absolute;
   }
   nav a.button-collapse, nav a.button-collapse i {
-    color: #009688;
+    color: #0077c0;
     height: 56px;
     line-height: 56px;
   }
