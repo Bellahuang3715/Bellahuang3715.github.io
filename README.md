@@ -28,7 +28,9 @@ https://github.com/varadbhogayata/varadbhogayata.github.io)
 - Push the generated code to the `master` branch of this repository.
 - <b>NOTE:</b> Make sure to set `analyticsId` from your Google Analytics account inside the Google Analytics script tag, if you want to use your own Google Analytics account.
 
-## Sections 📚
+## Activity-1
+![alt text](assets/img/activity1.png)
+
 ✔️ About me\
 ✔️ Experience\
 ✔️ Projects \
