@@ -543,7 +543,7 @@
 
     window.onload = function() 
     {
-      projects.sort((a, b) => a.date.localeCompare(b.date));
+      projects.sort((a, b) => b.date.localeCompare(a.date));
       addProjectCard(projects[0]);
     };
     document.getElementById('load-more').addEventListener('click', loadProjects);
