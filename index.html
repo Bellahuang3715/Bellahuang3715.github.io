@@ -534,14 +534,11 @@
 
     function loadProjects()
     {
+      var loadMorebtn = document.getElementById('load-more');
+      loadMorebtn.style.display = "none";
       for (var i = 1; i < projects.length; i++) {
         addProjectCard(projects[i]);
       }
-    }
-
-    function loadMostRecentProject()
-    {
-
     }
 
     window.onload = function() 

@@ -30,6 +30,9 @@ https://github.com/varadbhogayata/varadbhogayata.github.io)
 ![alt text](assets/img/activity4_2.png)
 
 ## Activity-5
+![alt text](assets/img/activity5_1.png)
+![alt text](assets/img/activity5_2.png)
+![alt text](assets/img/activity5_3.png)
 
 ## License 📄
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
