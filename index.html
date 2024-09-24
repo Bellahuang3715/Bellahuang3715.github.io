@@ -384,7 +384,7 @@
                   Implemented the database and user authentication for an alumni portal utilizing AWS RDS and Firebase
                 </li>
                 <li>
-                  <b>Tools:</b> Python, Flask, JavaScript
+                  <b>Tools:</b> Python, Flask, JavaScript, Docker, Airtable, Firebase
                 </li>
               </ul>
             </div>
@@ -404,7 +404,7 @@
                 <div class="col s12 m10">
                   <p>
                     <span class="card-title"><a href="https://www.xanadu.ai/" target="_blank"
-                        class="blue-text hoverline">Xanadu</a></span>
+                        class="blue-text hoverline">Xanadu Quantum</a></span>
                   </p>
                 </div>
               </div>
@@ -607,17 +607,27 @@
     <div class="container">
       <div class="row"></div>
     </div>
-    <div class="container"></div>
+    <!-- <div class="container"></div>
       <button id="load-more" class="btn blue">Load More</button>
-    </div>
+    </div> -->
   </section>
 
   <script>
 
     const projects = [
       {
+        title: "KenTourney",
+        date: "Jul 2024 - Present",
+        description: "A kendo tournament organizer built for the University of Toronto Kendo Club",
+        image: "/assets/img/bracket.png",
+        tools: "JavaScript, TypeScript, HTML, CSS",
+        accomplishments: "A system aiming to automate the generation of tournament brackets and streamline the process of scorekeeping, specifically designed for the University Kendo Club. The project has been approved, and it is currently in the stage of discussing design requirements with the executive team.",
+        video: null,
+        github: null
+      },
+      {
         title: "Sorting Algorithms Visualizer",
-        date: "2023-09-22",
+        date: "Jul 2022 - Jul 2023",
         description: "A real-time animations visualizer for sorting algorithms",
         image: "/assets/img/sorting_visualizer.png",
         tools: "JavaScript, TypeScript, HTML, CSS",
@@ -626,25 +636,55 @@
         github: "https://github.com/Bellahuang3715/sorting-visualizer"
       },
       {
-        title: "GIS Map",
-        date: "2022-01-08",
-        description: "A Geographic Information System similar to Google Maps",
-        image: "/assets/img/gis.png",
-        tools: "C++",
-        accomplishments: "An interactive mapping software built in a group of 3, featuring 10+ cities utilizing OpenStreetMap and Geocaching API, leveraging path-finding algorithms like Dijkstra, A-Star, Breadth & Depth-first search.",
+        title: "The Green Community",
+        date: "Aug 2023",
+        description: "A web-app aiming to promote sustainability and reduce food waste",
+        image: "/assets/img/green.png",
+        tools: "JavaScript, Bootstrap, React.js",
+        accomplishments: "This is the winner of the Green Team Award of the Summer 2023 Global Intern QHack hosted by Qualcomm. In a team of 5, we create a web-app that enables users to store a shopping list of their purchased items and give them the option to put their item to the marketplace if they have excess items. The goal of the web-app is to promote sustainability and reduce food waste.",
+        video: null,
+        github: null
+      },
+      {
+        title: "Solar System Simulator",
+        date: "Jan 2023 - Apr 2023",
+        description: "A solar system simulator built with Pygame",
+        image: "/assets/img/planets.png",
+        tools: "JavaScript, Bootstrap, React.js",
+        accomplishments: "Python-based solar system simulator using Pygame that accurately simulates the movement of planets within the solar system based on calculations of gravitational forces derived from physics principles. Gathered data on celestial bodies from NASA by performing web scraping with BeautifulSoup.Integrated the Skyfield API to access real-time planetary positions for enhanced simulator accuracy.",
+        video: null,
+        github: null
+      },
+      {
+        title: "Recipe Generator",
+        date: "Jan 2023 - Apr 2023",
+        description: "A recipe generator utilizing machine learning algorithms & models",
+        image: "/assets/img/recipe.png",
+        tools: "JavaScript, Bootstrap, React.js",
+        accomplishments: "In a team of 4, we built a recipe generative model using CNN + AlexNet. The model takes in multiple images of vegetables as an input, and returns the top 3 results that best match the ingredient list, and also includes detailed instructions on how to cook the recipe.",
         video: null,
         github: null
       },
       {
         title: "Ripple",
-        date: "2024-03-20",
+        date: "May 2022 - Sep 2022",
         description: "A mental health chatbot",
         image: "/assets/img/mental_health.png",
         tools: "JavaScript, Bootstrap, React.js",
-        accomplishments: "Collaborated effectively within a team of 4, under the guidance of Google engineers to develop a mental health web application, featuring an interactive chatbot powered by the Google Cloud Shell platform.",
+        accomplishments: "This project was created as a part of the Google Software Product Sprint in 2022. I collaborated effectively within a team of 4, under the guidance of Google engineers to develop a mental health web application, featuring an interactive chatbot powered by the Google Cloud Shell platform.",
         video: "https://www.youtube.com/watch?v=tbmwACnj-No",
         github: null
-      }
+      },
+      {
+        title: "GIS Map",
+        date: "Jan 2022 - Apr 2022",
+        description: "A Geographic Information System similar to Google Maps",
+        image: "/assets/img/gis.png",
+        tools: "C++",
+        accomplishments: "An interactive mapping software built in a group of 3, featuring 10+ cities utilizing OpenStreetMap and Geocaching API, leveraging path-finding algorithms like Dijkstra, A-Star, Breadth & Depth-first search. The mapping application calculates the shortest path between two endpoints, and provides the instructions to get from source to destination.",
+        video: null,
+        github: null
+      },
     ];
 
     function addProjectCard(project) {
@@ -664,9 +704,7 @@
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
-              <ul>
-                <li><b>Tools:</b>${project.tools}</li>
-              </ul>
+
               <p>${project.accomplishments}</p>
               <div class="card-action">
                 ${project.video ? `<a aria-label="Visit " href="${project.video}" target="_blank" data-position="top"
@@ -688,19 +726,21 @@
 
     function loadProjects()
     {
-      var loadMorebtn = document.getElementById('load-more');
-      loadMorebtn.style.display = "none";
-      for (var i = 1; i < projects.length; i++) {
+      // var loadMorebtn = document.getElementById('load-more');
+      // loadMorebtn.style.display = "none";
+      for (var i = 0; i < projects.length; i++) {
         addProjectCard(projects[i]);
       }
     }
 
-    window.onload = function() 
-    {
-      projects.sort((a, b) => b.date.localeCompare(a.date));
-      addProjectCard(projects[0]);
-    };
-    document.getElementById('load-more').addEventListener('click', loadProjects);
+    loadProjects();
+    // window.onload = function() 
+    // {
+    //   loadProjects();
+    //   // projects.sort((a, b) => b.date.localeCompare(a.date));
+    //   // addProjectCard(projects[0]);
+    // };
+    // document.getElementById('load-more').addEventListener('click', loadProjects);
 
     </script>
     
@@ -780,6 +820,10 @@
               <div class="col s4 m2">
                 <img alt="" src="/assets/img/docker.png" class="responsive-img" />Docker
               </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/perforce.png" class="responsive-img" />Perforce
+              </div>
+
 
             </div>
           </div>
